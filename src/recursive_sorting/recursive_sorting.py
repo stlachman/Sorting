@@ -14,18 +14,14 @@ def merge(arrA, arrB):
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
-    if len(arr) == 0:
+    if len(arr) <= 1:
         return arr
-    if len(arr) == 1:
-        return arr
-    else:
-        left = 0
-        midpoint = len(arr) // 2
-        right = len(arr) - 1
-        arr = merge(merge_sort(arr[left:midpoint]),
-                    merge_sort(arr[midpoint:right+1]))
-    # TO-DO
-    return arr
+    left = 0
+    midpoint = len(arr) // 2
+    right = len(arr) - 1
+    return merge(merge_sort(arr[left:midpoint]),
+                merge_sort(arr[midpoint:right+1]))
+
 
 
 # STRETCH: implement an in-place merge sort algorithm
